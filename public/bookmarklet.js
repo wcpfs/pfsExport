@@ -55,6 +55,6 @@ function download(data) {
   a.click(); 
 } 
 
-var rows = [['Date', 'Event', 'Session', 'GM', 'Scenario', 'Player', 'Society Number', 'Character', 'Faction', 'Prestige Points', 'Notes']].concat(dataRows(document.getElementById('_0')).concat(dataRows(document.getElementById('_1')))); 
+var rows = [['Date', 'Event Number', 'Event Name', 'Session', 'GM', 'Scenario', 'Society Number', 'Character', 'Faction', 'Prestige Points', 'Notes']].concat(dataRows(document.getElementById('_0')).concat(dataRows(document.getElementById('_1')))); 
 download(toCSV(rows)); 
 })();
