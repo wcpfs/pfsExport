@@ -9,4 +9,4 @@ bucket=s3://apps.windycitypathfinder.com
 cd $root_dir
 
 echo "Deploying site to $bucket"
-s3cmd sync --no-preserve $defaults public/* $bucket/$app_name
+s3cmd sync --no-preserve $defaults public/* $bucket/$app_name/
