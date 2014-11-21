@@ -8,13 +8,36 @@
 
   <!-- Bootstrap core CSS -->
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/app.css" rel="stylesheet">
+  <style type='text/css'>
+    .margin-top-md {margin-top: 24px;}
+  </style>
   <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
   <div id='markup'>
-    <div class='row'>
-<a href="javascript:(function () { function toContent(elem) { return elem.textContent.trim(); } function to_a(elems) { var a = []; for (var i = 0; i < elems.length; i++) { a.push(elems[i]); } return a; } function isDataRow(row) { return row.childElementCount == 12; } function joinLineFeeds(str) { return str.replace(/\n\s*/g, ''); } function toCSVLine(row) { return to_a(row.children).map(toContent).map(joinLineFeeds).slice(0,11); } function dataRows(el) { return to_a(el.getElementsByTagName('tr')).filter(isDataRow).map(toCSVLine); } function toCSV( rows ){ var fsep = ','; var quot = '%22'; var quotquot = '\\' + quot; var alwaysQuote = false; var quoteIfContainsQuote = true; var lines = []; rows.forEach(function(row){ var line = []; row.forEach(function(field){ var s = field; var needsQuote = alwaysQuote; if( s.indexOf( fsep ) >= 0 ) { needsQuote = true; } if( s.indexOf( quot ) >= 0 ){ needsQuote = needsQuote || quoteIfContainsQuote; s = s.replace( quot, quotquot ); } if( needsQuote ) { s = quot + s + quot; } line.push( s ); }); lines.push( line.join( fsep )); }); return lines.join( '\n' ); } function download(data) { var a = document.createElement('a'); a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(data); a.download = 'playerInfo.csv'; document.getElementsByTagName('body')[0].appendChild(a); a.click(); } var rows = [['Date', 'Event', 'Session', 'GM', 'Scenario', 'Player', 'Society Number', 'Character', 'Faction', 'Prestige Points', 'Notes']].concat(dataRows(document.getElementById('_0')).concat(dataRows(document.getElementById('_1')))); download(toCSV(rows)); })();" class='btn btn-primary'>PFS Export</a>
+    <div class='container lead'>
+      <div class='row'>
+        <h1>PFS Export Bookmarklet</h1>
+        <p>This is a bookmarklet that will export your Pathfinder Society session information to a CSV file in 3 easy steps.</p>
+      </div>
+
+      <div class='row margin-top-md'>
+        <h2>Step One</h2>
+        <p> Drag this bookmarklet onto your Bookmarks toolbar.  </p>
+        <a href="javascript:(function () { function toContent(elem) { return elem.textContent.trim(); } function to_a(elems) { var a = []; for (var i = 0; i < elems.length; i++) { a.push(elems[i]); } return a; } function isDataRow(row) { return row.childElementCount == 12; } function joinLineFeeds(str) { return str.replace(/\n\s*/g, ''); } function toCSVLine(row) { return to_a(row.children).map(toContent).map(joinLineFeeds).slice(0,11); } function dataRows(el) { return to_a(el.getElementsByTagName('tr')).filter(isDataRow).map(toCSVLine); } function toCSV( rows ){ var fsep = ','; var quot = '%22'; var quotquot = '\\' + quot; var alwaysQuote = false; var quoteIfContainsQuote = true; var lines = []; rows.forEach(function(row){ var line = []; row.forEach(function(field){ var s = field; var needsQuote = alwaysQuote; if( s.indexOf( fsep ) >= 0 ) { needsQuote = true; } if( s.indexOf( quot ) >= 0 ){ needsQuote = needsQuote || quoteIfContainsQuote; s = s.replace( quot, quotquot ); } if( needsQuote ) { s = quot + s + quot; } line.push( s ); }); lines.push( line.join( fsep )); }); return lines.join( '\n' ); } function download(data) { var a = document.createElement('a'); a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(data); a.download = 'playerInfo.csv'; document.getElementsByTagName('body')[0].appendChild(a); a.click(); } var rows = [['Date', 'Event', 'Session', 'GM', 'Scenario', 'Player', 'Society Number', 'Character', 'Faction', 'Prestige Points', 'Notes']].concat(dataRows(document.getElementById('_0')).concat(dataRows(document.getElementById('_1')))); download(toCSV(rows)); })();" class='btn btn-primary'>PFS Export</a>
+      </div>
+
+      <div class='row margin-top-md'>
+        <h2>Step Two</h2>
+        <p>Log onto Paizo's website and go to the <a href='https://secure.paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderSociety/myAccount/sessions' target='_blank'>Sessions Page</a>.</p>
+
+        <img src='/MyPathfinderSociety.png' class='img-responsive img-rounded' />
+      </div>
+
+      <div class='row margin-top-md'>
+        <h2>Step Three</h2>
+        <p>Click on either the "Show Player Sessions" or "Show GM Sessions" to show the data you want to export. You can click both if you like. Then just click the bookmarklet in your toolbar and you'll be prompted to download your exported CSV data!</p>
+      </div>
     </div>
   </div>
 </body>
